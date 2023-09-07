@@ -25,9 +25,11 @@ app.use(express.json())
 
 
 //routes
+app.get("/",(req,res)=>{
+    res.setHeader("Access-Control-Allow-Credentials","true");
+    res.send("API is running..");
+})
 app.use('/api/v1/auth', authRoutes)
-
-// app.use('/api/v1/user', userRoutes)
 
 //PORT
 const PORT =process.env.PORT||8000;
